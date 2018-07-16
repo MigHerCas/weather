@@ -1,0 +1,20 @@
+*,
+*::before, 
+*::after {
+    /* We remove all the default values given by the browser */
+    margin: 0;
+    padding: 0;
+    /* Any border/margin is added to the width/height of any element */
+    box-sizing: inherit;
+}
+
+html {
+    font-size: 62.5%; // Overall setting (defines what 1rem is)
+    background: $color-white;
+    height: 100%;
+}
+
+body {
+    box-sizing: border-box;
+    box-shadow: 0 0 3px $color-black;
+}
