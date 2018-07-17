@@ -4,7 +4,8 @@ var es2015 = require('babel-preset-es2015');
 module.exports = {
     entry: {
         App: "./app/assets/scripts/App.js",
-        Vendor: "./app/assets/scripts/Vendor.js"
+        Vendor: "./app/assets/scripts/Vendor.js",
+        API: "./app/assets/scripts/API.js"
     },
     output: {
         path: path.resolve(__dirname, "./app/temp/scripts"),
