@@ -7,8 +7,6 @@ let gulp = require('gulp'),
 // Static Server + watching scss/html/js files
 gulp.task('watch', function () {
 
-    console.log("task: watch");
-
     browserSync.init({
         notify: false,
         server: {
@@ -17,6 +15,10 @@ gulp.task('watch', function () {
     });
 
     watch('./app/index.html', function () {
+        browserSync.reload();
+    });
+
+    watch('./app/details.html', function () {
         browserSync.reload();
     });
 

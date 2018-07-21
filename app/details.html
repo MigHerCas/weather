@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+
+    <title>Details</title>
+
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="./temp/styles/main.css" type="text/css" />
+
+    <!-- Google fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css?family=Nunito:900i" rel="stylesheet">
+
+    <!-- Google icons -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.1/css/all.css" integrity="sha384-O8whS3fhG2OnA5Kas0Y9l3cfpmYjapjI0E4theH4iuMD+pLhbf6JI0jIMfYcK3yZ"
+        crossorigin="anonymous" />
+</head>
+
+<body>
+    <section class="section-header">
+        <h1 class="u-center-text">WEATHER</h1>
+    </section>
+
+    <main>
+        <section class="section-details">
+            <div class="details wrapper wrapper--small">
+
+                <h2 class="details__heading heading">Details</h2>
+
+                <div class="details__info u-border-radius">
+                    <div class="details__info__city-label u-center-text">
+                        <p>City:</p>
+                    </div>
+                    <div class="details__info__city-name u-center-text">
+                        <p>London</p>
+                    </div>
+                    <div class="details__info__favourite">
+                        <div class="details__info__icon-wrapper">
+                            <a href="#">
+                                <!-- <i class="details__info__icon far fa-lg fa-star"></i> -->
+                                <i class="details__info__icon fas fa-lg fa-star"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <section class="section-daily">
+            <div class="daily wrapper wrapper--small">
+
+                <h2 class="heading daily__heading">Daily</h2>
+                <h3 class="heading-secondary daily__heading-secondary">(Icon - max - min - rain - humidity)</h3>
+
+                <div class="info-panel info-panel__daily u-border-radius">
+                    <div class="info-panel__daily__item-icon u-center-text">
+                        <img src="./assets/imgs/codes/800.png" alt="Weather icon" />
+                    </div>
+                    <span class="info-panel__daily__item-max u-center-text">30ºC</span>
+                    <span class="info-panel__daily__item-min u-center-text">22ºC</span>
+                    <span class="info-panel__daily__item-rain u-center-text">0%</span>
+                    <span class="info-panel__daily__item-humidity u-center-text">15%</span>
+                </div>
+            </div> 
+            
+        </section>
+    </main>
+
+    <!-- SCRIPTS -->
+    <!-- <script src="./temp/scripts/App.js"></script>
+    <script src="./temp/scripts/Vendor.js"></script>
+    <script src="./temp/scripts/modernizr.js"></script> -->
+</body>
+
+</html>
