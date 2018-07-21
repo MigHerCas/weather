@@ -7,6 +7,8 @@ let gulp = require('gulp'),
 // Static Server + watching scss/html/js files
 gulp.task('watch', function () {
 
+    console.log("task: watch");
+
     browserSync.init({
         notify: false,
         server: {
@@ -18,6 +20,7 @@ gulp.task('watch', function () {
         browserSync.reload();
     });
 
+    
     watch('./app/assets/styles/sass/**/*.scss', function () {
         gulp.start('cssInject');
     });

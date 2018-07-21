@@ -4,16 +4,141 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+
     <title>Weather</title>
+
+    <!-- Stylesheet -->
     <link rel="stylesheet" href="./temp/styles/main.css" type="text/css" />
+    
+    <!-- Google fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css?family=Nunito:900i" rel="stylesheet">
+
+    <!-- Google icons -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.1/css/all.css" integrity="sha384-O8whS3fhG2OnA5Kas0Y9l3cfpmYjapjI0E4theH4iuMD+pLhbf6JI0jIMfYcK3yZ" crossorigin="anonymous" />
 </head>
 <body>
 
-    <p id="test"></p>
+    <section class="section-header">
+        <h1 class="u-center-text">WEATHER</h1>
+    </section>
+    <main>
+        <section class="section-search">
+            <div class="search wrapper wrapper--small">
+                <h2 class="search__heading u-center-text">Check the weather of any city</h2>
+                <div class="search__bar">
+                    <input type="text" class="search__bar__input" placeholder="City or ID" />
+                    <div class="search__bar__icon-wrapper">
+                        <a href="#"><i class="search__bar__icon fas fa-search fa-lg"></i></a> 
+                    </div>
+                </div>
+                <div class="search__bar__radio">
+                    <div class="search__bar__radio__1">
+                        <input type="radio" id="name" name="option" checked="true"/><label for="name"/>Name</label>
+                    </div>
+                    <div class="search__bar__radio__2">
+                        <input type="radio" id="id" name="option" />
+                        <label for="id" />Id</label>
+                    </div>
+                    <div class="search__bar__radio__3">
+                        <input type="radio" id="current" name="option" />
+                        <label for="current" />Current location</label>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section-results">
+            
+            <div class="favourites container wrapper wrapper--small">
+
+                <h2>Favourite locations:</h2>
+
+                <div class="favourites__item u-border-radius">
+                    <div class="favourites__item__city-label">
+                        City:
+                    </div>
+                    <div class="favourites__item__city-name">
+                        London
+                    </div>
+                    <div class="favourites__item__today">
+                        Today
+                    </div>
+                    <div class="favourites__item__weather-label">
+                        Weather: 
+                    </div>
+                    <div class="favourites__item__weather-icon">
+                        <img src="./assets/imgs/codes/800.png" alt="Weather icon" />
+                    </div>
+                    <div class="favourites__item__weather-temperature">
+                        <div class="favourites__item__weather-temperature__max">
+                            23ºC
+                        </div>
+                        <div class="favourites__item__weather-temperature__min">
+                            18ºC
+                        </div>
+                    </div>
+                </div>
+
+                <div class="favourites__item u-border-radius">
+                    <div class="favourites__item__city-label">
+                        City:
+                    </div>
+                    <div class="favourites__item__city-name">
+                        Berlin
+                    </div>
+                    <div class="favourites__item__today">
+                        Today
+                    </div>
+                    <div class="favourites__item__weather-label">
+                        Weather:
+                    </div>
+                    <div class="favourites__item__weather-icon">
+                        <img src="./assets/imgs/codes/311.png" alt="Weather icon" />
+                    </div>
+                    <div class="favourites__item__weather-temperature">
+                        <div class="favourites__item__weather-temperature__max">
+                            17ºC
+                        </div>
+                        <div class="favourites__item__weather-temperature__min">
+                            12ºC
+                        </div>
+                    </div>
+                </div>
+
+                <div class="favourites__item u-border-radius">
+                    <div class="favourites__item__city-label">
+                        City:
+                    </div>
+                    <div class="favourites__item__city-name">
+                        Madrid
+                    </div>
+                    <div class="favourites__item__today">
+                        Today
+                    </div>
+                    <div class="favourites__item__weather-label">
+                        Weather:
+                    </div>
+                    <div class="favourites__item__weather-icon">
+                        <img src="./assets/imgs/codes/803.png" alt="Weather icon" />
+                    </div>
+                    <div class="favourites__item__weather-temperature">
+                        <div class="favourites__item__weather-temperature__max">
+                            17ºC
+                        </div>
+                        <div class="favourites__item__weather-temperature__min">
+                            10ºC
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+    </main>
     
-    <script src="./temp/scripts/App.js"></script>
+    <!-- SCRIPTS -->
+    <!-- <script src="./temp/scripts/App.js"></script>
     <script src="./temp/scripts/Vendor.js"></script>
-    <script src="./temp/scripts/modernizr.js"></script>
-    <script src="./temp/scripts/API.js"></script>
+    <script src="./temp/scripts/modernizr.js"></script> -->
 </body>
 </html>

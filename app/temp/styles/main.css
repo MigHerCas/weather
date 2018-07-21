@@ -333,3 +333,233 @@ template {
 [hidden] {
   display: none;
 }
+
+body {
+  /* Properties related to font are usually inherited */
+  font-family: "Open Sans", sans-serif;
+  font-weight: 300;
+  line-height: 1.7;
+  height: 100%;
+  color: #333;
+}
+
+.u-center-text {
+  text-align: center;
+}
+
+.u-border-radius {
+  border-radius: 3px;
+}
+
+.section-header {
+  width: 100%;
+  height: 10vh;
+  position: relative;
+  top: 0;
+  left: 0;
+  background-color: #2998FF;
+}
+
+.section-header h1 {
+  font-size: 2.2rem;
+  font-family: 'Nunito', sans-serif;
+  font-weight: 900;
+  color: #FFFFFF;
+  text-shadow: 3px 3px 0 #FFB900;
+  margin: 0;
+}
+
+.section-search {
+  width: 100%;
+  height: 27vh;
+  position: relative;
+}
+
+.section-results {
+  width: 100%;
+  height: 60vh;
+  position: relative;
+}
+
+.section-results h2 {
+  width: 90%;
+  display: block;
+  margin: 0 auto;
+  font-family: Open sans;
+  font-size: 1.4rem;
+  font-weight: 300;
+}
+
+.container {
+  background-color: #FFFFFF;
+  height: 100%;
+}
+
+.search__heading {
+  font-family: Open sans;
+  font-size: 1.4rem;
+  font-weight: 300;
+}
+
+.search__bar {
+  overflow: hidden;
+  width: 85%;
+  margin: 0 auto;
+}
+
+.search__bar__input {
+  width: calc(100% - 5.2rem);
+  height: 1rem;
+  margin: 0 auto;
+  border-top: 1px solid #777777;
+  border-left: 1px solid #777777;
+  border-bottom: 1px solid #777777;
+  border-right: none;
+  border-radius: 3px 0 0 3px;
+  padding: 1rem 1rem;
+  outline: none;
+}
+
+.search__bar__input::-webkit-input-placeholder {
+  color: #777777;
+}
+
+.search__bar__icon-wrapper {
+  position: relative;
+  float: right;
+  width: 3rem;
+  height: 3rem;
+  background: #FFB900;
+  border-radius: 0 3px 3px 0;
+  border: 1px solid #777777;
+}
+
+.search__bar__icon-wrapper a {
+  display: block;
+  width: 3rem;
+  height: 3rem;
+  cursor: pointer;
+  content: "";
+}
+
+.search__bar__icon {
+  position: absolute;
+  color: #FFFFFF;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
+
+.search__bar__radio {
+  width: 80%;
+  margin: 0 auto;
+  margin-top: .75rem;
+}
+
+.search__bar__radio input {
+  margin-right: .3rem;
+}
+
+.search__bar__radio label {
+  font-size: 1.1rem;
+}
+
+.search__bar__radio__1 {
+  width: 25%;
+  float: left;
+}
+
+.search__bar__radio__2 {
+  width: 20%;
+  float: left;
+}
+
+.search__bar__radio__3 {
+  width: 50%;
+  float: left;
+}
+
+.favourites {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 2rem 5rem 5rem 5rem;
+  grid-row-gap: 1rem;
+}
+
+.favourites__item {
+  width: 90%;
+  height: 100%;
+  margin: 0 auto;
+  border: 1px solid #2998FF;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  font-size: 1.2rem;
+}
+
+.favourites__item__city-label {
+  padding-left: 1rem;
+  color: #FFB900;
+  font-weight: 400;
+}
+
+.favourites__item__city-name {
+  font-weight: 400;
+}
+
+.favourites__item__today {
+  text-align: right;
+  padding-right: 1rem;
+  color: #777777;
+}
+
+.favourites__item__weather-label {
+  padding-left: 1rem;
+  color: #FFB900;
+  font-weight: 400;
+}
+
+.favourites__item__weather-icon {
+  position: relative;
+}
+
+.favourites__item__weather-icon img {
+  position: absolute;
+  height: 4rem;
+  top: -1rem;
+  text-align: center;
+}
+
+.favourites__item__weather-temperature {
+  text-align: center;
+}
+
+.favourites__item__weather-temperature__max {
+  width: 50%;
+  float: left;
+  color: #E51118;
+}
+
+.favourites__item__weather-temperature__min {
+  width: 50%;
+  float: left;
+  color: #2998FF;
+}
+
+.wrapper {
+  overflow: hidden;
+  padding-left: 18px;
+  padding-right: 18px;
+  max-width: 1236px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.wrapper--medium {
+  max-width: 976px;
+}
+
+.wrapper--small {
+  max-width: 470px;
+}

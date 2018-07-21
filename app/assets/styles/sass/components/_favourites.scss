@@ -1,0 +1,68 @@
+.favourites {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 2rem 5rem 5rem 5rem;
+    grid-row-gap: 1rem;
+
+    &__item {
+        width: 90%;
+        height: 100%;
+        margin: 0 auto; 
+        border: 1px solid $color-blue-light;
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-rows: 1fr 1fr;
+        font-size: 1.2rem;
+
+        &__city-label {
+            padding-left: 1rem;
+            color: $color-orange;
+            font-weight: 400;
+        }
+
+        &__city-name {
+            font-weight: 400;
+        }
+
+        &__today {
+            text-align: right;
+            padding-right: 1rem;
+            color: $color-grey;
+        }
+
+        &__weather-label {
+            padding-left: 1rem;
+            color: $color-orange;
+            font-weight: 400;
+        }
+
+        &__weather-icon {
+            position: relative;
+
+            & img {
+                position: absolute;
+                height: 4rem;
+                top: -1rem;
+                text-align: center;    
+            }
+        }
+
+        &__weather-temperature {
+            text-align: center;
+
+            &__max {
+                width: 50%;
+                float: left;
+                color: $color-red;
+            }
+
+            &__min {
+                width: 50%;
+                float: left;
+                color: $color-blue-light;
+            }
+
+        }
+    }
+    
+}

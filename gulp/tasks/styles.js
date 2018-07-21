@@ -6,7 +6,7 @@ let gulp = require('gulp'),
     normalize = require('node-normalize-scss');
 
 // Variables
-let input = './app/assets/styles/sass/**/*.scss';
+let input = "./app/assets/styles/sass/**/*.scss"
 let output = './app/temp/styles';
 let sassOptions = {
     errLogToConsole: true,
@@ -17,7 +17,7 @@ let sassOptions = {
 // Compile SASS into CSS
 gulp.task('sass', function () {
     return gulp
-        // Find all `.scss` files from the `stylesheets/` folder
+        // Find all `.scss` files from the sass folder
         .src(input)
         // Run Sass on those files
         .pipe(sass(sassOptions).on('error', sass.logError))

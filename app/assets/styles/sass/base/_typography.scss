@@ -1,8 +1,8 @@
 body {
     /* Properties related to font are usually inherited */
     font-family: "Open Sans", sans-serif;
-    font-weight: 400;
+    font-weight: 300;
     line-height: 1.7;
-    padding: 1%;
     height: 100%;
+    color: $color-default;
 }
