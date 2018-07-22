@@ -1,7 +1,10 @@
-.section-header {
-    width: 100%;
-    height: 10vh;
+section {
     position: relative;
+    width: 100%;
+}
+
+.section-header {
+    height: 10vh;
     top: 0;
     left: 0;
     background-color: $color-blue-light;
@@ -19,15 +22,11 @@
 }
 
 .section-search {
-    width: 100%;
     height: 27vh;
-    position: relative;
 }
 
 .section-results {
-    width: 100%;
     height: 60vh;
-    position: relative;
 
     & h2 {
         width: 90%;

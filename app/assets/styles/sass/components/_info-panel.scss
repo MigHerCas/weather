@@ -8,12 +8,12 @@
     display: grid;
     font-size: 1.2rem;
     padding: .5rem 0;
+    font-weight: 400;
+    color: $color-grey;
 
     &__daily {
         grid-template-columns: repeat(5, 1fr);
-        font-weight: 400;
-        color: $color-grey;
-
+        
         &__item-icon {
             position: relative;
             width: 50%;
@@ -33,6 +33,22 @@
 
         &__item-min {
             color: $color-blue-light;
+        }
+    }
+
+    &__subsequent {
+        grid-template-columns: 1fr 1fr;
+
+        &__item-icon {
+            color: $color-green-light;
+        }
+    }
+
+    &__forecast {
+        grid-template-columns: repeat(5, 1fr);
+
+        &__item {
+            color: $color-red;
         }
     }
 
