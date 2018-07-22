@@ -5,11 +5,11 @@
         width: 100%;
         
         @include atMedium {
-            width: 80%;
+            width: 70%;
         }
 
         @include atLarge {
-            width: 70%;
+            width: 60%;
         }
 
         margin: 0 auto;
@@ -18,11 +18,15 @@
             width: calc(100% - 5.2rem);
             height: 1rem;
 
+            @include atMedium {
+                text-indent: 1rem;
+            }
+
             @include atLarge {
                 width: calc(100% - 5.7rem);
                 height: 1.5rem;
+                
             }
-
             
             margin: 0 auto;
             

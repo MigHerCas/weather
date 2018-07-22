@@ -29,7 +29,7 @@
         margin: 0 auto; 
         border: 1px solid $color-blue-light;
         display: grid;
-        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-columns: 1fr .5fr 1fr;
 
             @include atSmall {
                 grid-template-columns: 1fr 1fr 1fr;
@@ -83,11 +83,15 @@
                 position: absolute;
                 height: 3rem;
                 top: -0.5rem;
-                left: 2rem; 
 
                 @include atSmall {
                     height: 4rem;
                     top: -1rem;
+                    left: 1.5rem;
+                }
+
+                @include atMedium {
+                    left: 3rem;
                 }
             }
         }
