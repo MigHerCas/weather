@@ -6,8 +6,11 @@
 @import "abstracts/variables";
 
 // Base
+// @import "base/base";
+@import "base/base";
 @import "base/typography";
 @import "base/utilities";
+
 
 // Pages
 @import "pages/home";

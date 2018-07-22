@@ -334,6 +334,10 @@ template {
   display: none;
 }
 
+html, body {
+  height: 100%;
+}
+
 body {
   /* Properties related to font are usually inherited */
   font-family: "Open Sans", sans-serif;
@@ -357,7 +361,6 @@ section {
 }
 
 .section-header {
-  height: 10vh;
   top: 0;
   left: 0;
   background-color: #2998FF;
@@ -365,41 +368,47 @@ section {
 }
 
 .section-header h1 {
-  font-size: 2.2rem;
   font-family: 'Nunito', sans-serif;
   font-weight: 900;
   color: #FFFFFF;
   text-shadow: 3px 3px 0 #FFB900;
   margin: 0;
   height: 100%;
+  font-size: 2.2rem;
 }
 
-.section-search {
-  height: 27vh;
+@media (min-width: 700px) {
+  .section-header h1 {
+    font-size: 3rem;
+  }
 }
 
-.section-results {
-  height: 60vh;
+@media (min-width: 700px) {
+  .section-search {
+    padding-bottom: 1rem;
+  }
 }
 
-.section-results h2 {
-  width: 90%;
-  margin: 0 auto;
-}
-
-.container {
-  background-color: #FFFFFF;
-  height: 100%;
-}
-
-section:not(.section-header) {
+section:not(.section-search, .section-header) {
   margin-top: .75rem;
 }
 
 .search__bar {
   overflow: hidden;
-  width: 85%;
+  width: 100%;
   margin: 0 auto;
+}
+
+@media (min-width: 700px) {
+  .search__bar {
+    width: 80%;
+  }
+}
+
+@media (min-width: 1000px) {
+  .search__bar {
+    width: 70%;
+  }
 }
 
 .search__bar__input {
@@ -415,8 +424,21 @@ section:not(.section-header) {
   outline: none;
 }
 
+@media (min-width: 1000px) {
+  .search__bar__input {
+    width: calc(100% - 5.7rem);
+    height: 1.5rem;
+  }
+}
+
 .search__bar__input::-webkit-input-placeholder {
   color: #777777;
+}
+
+@media (min-width: 700px) {
+  .search__bar__input::-webkit-input-placeholder {
+    font-size: 1.1rem;
+  }
 }
 
 .search__bar__icon-wrapper {
@@ -427,6 +449,13 @@ section:not(.section-header) {
   background: #FFB900;
   border-radius: 0 5px 5px 0;
   border: 1px solid #777777;
+}
+
+@media (min-width: 1000px) {
+  .search__bar__icon-wrapper {
+    width: 3.5rem;
+    height: 3.5rem;
+  }
 }
 
 .search__bar__icon-wrapper a {
@@ -447,54 +476,119 @@ section:not(.section-header) {
 }
 
 .search__bar__radio {
-  width: 80%;
-  margin: 0 auto;
+  width: 100%;
+  display: grid;
+  position: relative;
+  grid-template-columns: 0.1fr 0.3fr 0.1fr 0.2fr 0.1fr 1fr;
+  margin-right: auto;
+  margin-left: auto;
   margin-top: .75rem;
 }
 
+@media (min-width: 700px) {
+  .search__bar__radio {
+    width: 80%;
+    grid-template-columns: 0.1fr 0.3fr 0.1fr 0.2fr 0.1fr 1fr;
+  }
+}
+
+@media (min-width: 1000px) {
+  .search__bar__radio {
+    width: 60%;
+  }
+}
+
 .search__bar__radio input {
-  margin-right: .3rem;
+  display: block;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
 }
 
 .search__bar__radio label {
-  font-size: 1.1rem;
+  font-size: 1rem;
+  padding-left: 5px;
 }
 
-.search__bar__radio__1 {
-  width: 30%;
-  float: left;
+@media (min-width: 380px) {
+  .search__bar__radio label {
+    font-size: 1.2rem;
+  }
 }
 
-.search__bar__radio__2 {
-  width: 20%;
-  float: left;
+@media (min-width: 700px) {
+  .search__bar__radio label {
+    font-size: 1.3rem;
+  }
 }
 
-.search__bar__radio__3 {
-  width: 50%;
-  float: left;
+@media (min-width: 1000px) {
+  .search__bar__radio label {
+    font-size: 1.4rem;
+  }
+}
+
+.search__bar__radio-wrapper {
+  height: 100%;
+  position: relative;
 }
 
 .favourites {
+  height: 100%;
+  padding-bottom: 5rem;
   display: grid;
   grid-template-columns: 1fr;
   grid-template-rows: 2rem 5rem 5rem 5rem;
-  grid-row-gap: 1.5rem;
+  grid-row-gap: 1.2rem;
+}
+
+@media (min-width: 380px) {
+  .favourites {
+    grid-row-gap: 1.5rem;
+  }
+}
+
+@media (min-width: 1000px) {
+  .favourites {
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 2rem 5rem 5rem 5rem;
+    grid-column-gap: 1.5rem;
+    grid-row-gap: 2rem;
+  }
+}
+
+.favourites__heading {
+  margin: 0;
+  grid-column: -1 / 1;
 }
 
 .favourites__item {
   cursor: pointer;
-  width: 90%;
+  width: 100%;
   height: 100%;
   margin: 0 auto;
   border: 1px solid #2998FF;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   grid-template-rows: 1fr 1fr;
-  font-size: 1.2rem;
-  -webkit-transition: all 0.25s;
-  transition: all 0.25s;
+  font-size: 1.1rem;
+  -webkit-transition: all 0.15s;
+  transition: all 0.15s;
   padding-top: .5rem;
+}
+
+@media (min-width: 380px) {
+  .favourites__item {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}
+
+@media (min-width: 700px) {
+  .favourites__item {
+    font-size: 1.4rem;
+  }
 }
 
 .favourites__item:hover {
@@ -514,6 +608,7 @@ section:not(.section-header) {
 
 .favourites__item__city-name {
   font-weight: 400;
+  text-align: center;
 }
 
 .favourites__item__today {
@@ -534,9 +629,16 @@ section:not(.section-header) {
 
 .favourites__item__weather-icon img {
   position: absolute;
-  height: 4rem;
-  top: -1rem;
-  text-align: center;
+  height: 3rem;
+  top: -0.5rem;
+  left: 2rem;
+}
+
+@media (min-width: 380px) {
+  .favourites__item__weather-icon img {
+    height: 4rem;
+    top: -1rem;
+  }
 }
 
 .favourites__item__weather-temperature {
@@ -559,8 +661,26 @@ section:not(.section-header) {
 .heading {
   display: block;
   font-family: Open sans;
-  font-size: 1.4rem;
+  font-size: 1.1rem;
   font-weight: 300;
+}
+
+@media (min-width: 380px) {
+  .heading {
+    font-size: 1.4rem;
+  }
+}
+
+@media (min-width: 700px) {
+  .heading {
+    font-size: 1.6rem;
+  }
+}
+
+@media (min-width: 1000px) {
+  .heading {
+    font-size: 2rem;
+  }
 }
 
 .heading-secondary {
@@ -704,17 +824,27 @@ section:not(.section-header) {
 
 .wrapper {
   overflow: hidden;
-  padding-left: 18px;
-  padding-right: 18px;
-  max-width: 1236px;
-  margin-left: auto;
-  margin-right: auto;
+  padding-left: 1.3rem;
+  padding-right: 1.3rem;
 }
 
-.wrapper--medium {
-  max-width: 976px;
+@media (min-width: 380px) {
+  .wrapper {
+    padding-left: 2.1rem;
+    padding-right: 2.1rem;
+  }
 }
 
-.wrapper--small {
-  max-width: 470px;
+@media (min-width: 700px) {
+  .wrapper {
+    padding-left: 5.5rem;
+    padding-right: 5.5rem;
+  }
+}
+
+@media (min-width: 1000px) {
+  .wrapper {
+    padding-left: 7rem;
+    padding-right: 7rem;
+  }
 }

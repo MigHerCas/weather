@@ -1,20 +1,48 @@
 .favourites {
+    height: 100%;
+    padding-bottom: 5rem;
     display: grid;
     grid-template-columns: 1fr;
     grid-template-rows: 2rem 5rem 5rem 5rem;
-    grid-row-gap: 1.5rem;
+    grid-row-gap: 1.2rem;
+
+    @include atSmall {
+        grid-row-gap: 1.5rem;
+    }
+
+    @include atLarge {
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 2rem 5rem 5rem 5rem;
+        grid-column-gap: 1.5rem;
+        grid-row-gap: 2rem;
+    }
+
+    &__heading {
+        margin: 0;
+        grid-column: -1 / 1;
+    }
 
     &__item {
         cursor: pointer;
-        width: 90%;
+        width: 100%;
         height: 100%;
         margin: 0 auto; 
         border: 1px solid $color-blue-light;
         display: grid;
         grid-template-columns: 1fr 1fr 1fr;
+
+            @include atSmall {
+                grid-template-columns: 1fr 1fr 1fr;
+            }
+
         grid-template-rows: 1fr 1fr;
-        font-size: 1.2rem;
-        transition: all 0.25s;
+        font-size: 1.1rem;
+
+        @include atMedium {
+            font-size: 1.4rem;
+        }
+               
+        transition: all 0.15s;
         padding-top: .5rem;
         
         &:hover {
@@ -33,6 +61,7 @@
 
         &__city-name {
             font-weight: 400;
+            text-align: center;            
         }
 
         &__today {
@@ -52,9 +81,14 @@
 
             & img {
                 position: absolute;
-                height: 4rem;
-                top: -1rem;
-                text-align: center;    
+                height: 3rem;
+                top: -0.5rem;
+                left: 2rem; 
+
+                @include atSmall {
+                    height: 4rem;
+                    top: -1rem;
+                }
             }
         }
 

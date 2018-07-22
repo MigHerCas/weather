@@ -1,17 +1,21 @@
 .wrapper {
     overflow: hidden;
-    padding-left: 18px;
-    padding-right: 18px;
-    max-width: 1236px;
-    margin-left: auto;
-    margin-right: auto;
+    padding-left: 1.3rem;
+    padding-right: 1.3rem;
 
-    &--medium {
-        max-width: 976px;
+    @include atSmall {
+        padding-left: 2.1rem;
+        padding-right: 2.1rem;
     }
 
-    &--small {
-        max-width: 470px;
+    @include atMedium {
+        padding-left: 5.5rem;
+        padding-right: 5.5rem;
+    }
+
+    @include atLarge {
+        padding-left: 7rem;
+        padding-right: 7rem;
     }
 
 }

@@ -24,7 +24,7 @@
     </section>
     <main>
         <section class="section-search">
-            <div class="search wrapper wrapper--small">
+            <div class="search wrapper">
                 <h2 class="heading u-center-text">Check the weather of any city</h2>
                 <div class="search__bar">
                     <input type="text" class="search__bar__input" placeholder="City or ID" />
@@ -33,26 +33,25 @@
                     </div>
                 </div>
                 <div class="search__bar__radio">
-                    <div class="search__bar__radio__1">
-                        <input type="radio" id="name" name="option" checked="true"/><label for="name"/>Name</label>
-                    </div>
-                    <div class="search__bar__radio__2">
-                        <input type="radio" id="id" name="option" />
-                        <label for="id" />Id</label>
-                    </div>
-                    <div class="search__bar__radio__3">
-                        <input type="radio" id="current" name="option" />
-                        <label for="current" />Current location</label>
-                    </div>
+                    
+                    <div class="search__bar__radio-wrapper"><input type="radio" id="name" name="option" checked="true"/></div>
+                    <label for="name">Name</label>
+                    
+                    <div class="search__bar__radio-wrapper"><input type="radio" id="id" name="option" /></div>
+                    <label for="id">Id</label>
+                    
+                    <div class="search__bar__radio-wrapper"><input type="radio" id="current" name="option" /></div>
+                    <label for="current">Current location</label>
+                    
                 </div>
             </div>
         </section>
 
         <section class="section-results">
             
-            <div class="favourites container wrapper wrapper--small">
+            <div class="favourites wrapper">
 
-                <h2 class="heading">Favourite locations:</h2>
+                <h2 class="favourites__heading heading">Favourite locations:</h2>
 
                 <div class="favourites__item u-border-radius">
                     <div class="favourites__item__city-label">
