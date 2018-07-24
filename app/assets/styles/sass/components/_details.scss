@@ -1,45 +1,9 @@
 .details {
 
     &__heading {
-        width: 90%;
-        margin: 0 auto .75rem auto;
-    }
 
-    &__info {
-        width: 90%;
-        height: 100%;
-        margin: 0 auto; 
-        border: 1px solid $color-grey;
-        background-color: $color-white-secondary;
-        display: grid;
-        grid-template-columns: .5fr 1fr .5fr;
-        grid-template-rows: 1fr;
-        font-size: 1.2rem;
-
-        & p {
-            margin-top: .5rem;
-            margin-bottom: .5rem;
-        }
-
-        &__city-label {
-            font-weight: 400;
-            color: $color-orange;
-        }
-
-        &__city-name {
-            font-weight: 400;
-            color: $color-grey;
-        }
-
-        &__icon-wrapper {
-            position: relative;
-            height: 100%;
-        }
-
-        &__icon {
-            color: $color-orange;
-            position: absolute;
-            @include centering;
+        @include atLarge {
+            font-size: 1.6rem;
         }
     }
 }

@@ -1,12 +1,13 @@
 .forecast {
     
     &__heading {
-        margin: 0 auto;
-        width: 90%;
+
+        @include atLarge {
+            font-size: 1.7rem;
+        }
     }
 
     &__heading-secondary {
-        margin: 0 auto;
-        width: 90%; 
+    
     }
 }

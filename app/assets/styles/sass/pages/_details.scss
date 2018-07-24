@@ -1,4 +1,27 @@
+.det {
 
-section:not(.section-search, .section-header) {
-    margin-top: .75rem;
+    & .heading, .heading-secondary {
+        margin: 0;
+    }
+
+    & .heading-secondary {
+        transform: translateY(-.4rem);
+    }
+    
+    & section {
+        margin-top: 1rem;
+
+        @include atMedium {
+            margin-top: .75rem;
+        }
+
+        @include atLarge {
+            width: 70%;
+            margin: .5rem auto 0 auto;
+        }   
+    }
+
+    & .section-forecast {
+        padding-bottom: 5rem;
+    }
 }

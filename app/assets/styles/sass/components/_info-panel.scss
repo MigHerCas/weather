@@ -1,15 +1,56 @@
 .info-panel {
 
-    width: 90%;
-    height: 100%;
-    margin: 0 auto; 
+    width: 100%; 
     border: 1px solid $color-grey;
     background-color: $color-white-secondary;
     display: grid;
-    font-size: 1.2rem;
+    font-size: 1rem;
     padding: .5rem 0;
     font-weight: 400;
     color: $color-grey;
+
+    @include atSmall {
+        font-size: 1.2rem;
+    } 
+
+    @include atMedium {
+        font-size: 1.35rem;
+    }
+
+    @include atLarge {
+        font-size: 1.4rem;
+    } 
+
+    &__details {
+        grid-template-columns: .5fr 1fr .5fr;
+        grid-template-rows: 1fr;
+
+        & p {
+            margin-top: 0;
+            margin-bottom: 0;
+        }
+
+        &__city-label {
+            font-weight: 400;
+            color: $color-orange;
+        }
+
+        &__city-name {
+            font-weight: 400;
+            color: $color-grey;
+        }
+
+        &__icon-wrapper {
+            position: relative;
+            height: 100%;
+        }
+
+        &__icon {
+            color: $color-orange;
+            position: absolute;
+            @include centering;
+        }    
+    }
 
     &__daily {
         grid-template-columns: repeat(5, 1fr);
@@ -22,8 +63,21 @@
                 position: absolute;
                 height: 4rem;
                 top: -1rem;
-                left: 1rem;
+                left: -.2rem;
                 
+                @include atSmall {
+                    left: .6rem;
+                }
+
+                @include atMedium {
+                    left: 1.7rem;
+                    top: -.8rem;
+                }
+
+                @include atLarge {
+                    top: -.7rem;
+                    left: 2.3rem;
+                }
             }
         }
 
@@ -38,6 +92,10 @@
 
     &__subsequent {
         grid-template-columns: 1fr 1fr;
+
+        @include atMedium {
+           width: 60%;
+        }
 
         &__item-icon {
             color: $color-green-light;

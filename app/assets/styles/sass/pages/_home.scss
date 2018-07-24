@@ -3,6 +3,10 @@ section {
     width: 100%;
 }
 
+section:not(.section-search, .section-header) {
+    margin-top: .75rem;
+}
+
 .section-header {
     top: 0;
     left: 0;
@@ -26,6 +30,6 @@ section {
     }
 }
 
-.section-search {
+.section-favourites {
     margin-bottom: 1rem;
 }

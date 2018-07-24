@@ -7,3 +7,38 @@ body {
     height: 100%;
     color: $color-default;
 }
+
+.heading {
+    display: block;
+    font-family: Open sans;
+    font-size: 1.1rem;
+    font-weight: 300;
+
+    @include atSmall {
+        font-size: 1.4rem;
+    }
+
+    @include atMedium {
+        font-size: 1.6rem;
+    }
+
+    @include atLarge {
+        font-size: 1.8rem;
+    }
+}
+
+.heading-secondary {
+    display: block;
+    font-family: Open sans;
+    font-size: .9rem;
+    font-weight: 300;
+    color: $color-grey;
+
+    @include atSmall {
+        font-size: 1.1rem;
+    }
+
+    @include atMedium {
+        font-size: 1.2rem;
+    }
+}

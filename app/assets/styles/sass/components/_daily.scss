@@ -1,12 +1,26 @@
 .daily {
     
     &__heading {
-        margin: 0 auto;
-        width: 90%;
+
+        @include atLarge {
+            font-size: 1.7rem;
+            display: block;
+            width: 4rem;
+            float: left;
+        }
     }
 
     &__heading-secondary {
-        margin: 0 auto;
-        width: 90%;
+
+        @include atLarge {
+            display: block;
+            width: 83%;
+            float: left;
+            // text-align: center;
+            position: relative;
+            top: .8rem;
+            text-indent: 1rem;
+        }
     }
+
 }
