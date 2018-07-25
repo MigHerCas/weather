@@ -8,7 +8,6 @@ class ApiCall {
         this.api_key = "a4fd59fe380d5916bbb4cb46978e82ad";
         this.metric = "metric"
         this.url = `http://api.openweathermap.org/data/2.5/weather?q=${this.city}&appid=${this.api_key}&units=${this.metric}`;
-        this.target = document.getElementById("test");
     }  
 
     call() {

@@ -29,18 +29,18 @@
                 <div class="search__bar">
                     <input type="text" class="search__bar__input" placeholder="City or ID" />
                     <div class="search__bar__icon-wrapper">
-                        <a href="details.html"><i class="search__bar__icon fas fa-search fa-lg"></i></a> 
+                        <a id="searchBtn" href="#"><i class="search__bar__icon fas fa-search fa-lg"></i></a> 
                     </div>
                 </div>
                 <div class="search__bar__radio">
                     
-                    <div class="search__bar__radio-wrapper"><input type="radio" id="name" name="option" checked="true"/></div>
+                    <div class="search__bar__radio-wrapper"><input type="radio" id="name" value="name" name="option" checked="true"/></div>
                     <label for="name">Name</label>
                     
-                    <div class="search__bar__radio-wrapper"><input type="radio" id="id" name="option" /></div>
+                    <div class="search__bar__radio-wrapper"><input type="radio" id="id" value="id" name="option" /></div>
                     <label for="id">Id</label>
                     
-                    <div class="search__bar__radio-wrapper"><input type="radio" id="current" name="option" /></div>
+                    <div class="search__bar__radio-wrapper"><input type="radio" id="current" name="option" value="current" /></div>
                     <label for="current">Current location</label>
                     
                 </div>
@@ -214,8 +214,9 @@
     </main>
     
     <!-- SCRIPTS -->
-    <!-- <script src="./temp/scripts/App.js"></script>
+    <script src="./temp/scripts/App.js"></script>
     <script src="./temp/scripts/Vendor.js"></script>
-    <script src="./temp/scripts/modernizr.js"></script> -->
+    <script src="./temp/scripts/modernizr.js"></script>
+    
 </body>
 </html>
