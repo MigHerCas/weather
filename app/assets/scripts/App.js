@@ -11,14 +11,15 @@ $(document).ready(function () {
     // Variables
     let inpName = $("input#name");
     let inpId = $("input#id");
+    let inpCurrent = $("input#current");
     let inpSearch = $(".search__bar__input");
-    let btnSearch = $("#searchBtn");
     let type = 1;
     let data;
     let search;
 
     // Radio events
     inpName.click(function () {
+        
         type = 1;
         search = new Search(data, type);
         search.address();
@@ -37,6 +38,29 @@ $(document).ready(function () {
         search.address();
     });
 
+    // Geolocation
+    inpCurrent.change(() => {
+       
+        if (navigator.geolocation) {
+            
+            navigator.geolocation.getCurrentPosition(callGeoLoc);
+            
+        } else {
+            alert("Geolocation is not supported by your browser. Try other options");
+        }
+
+        function callGeoLoc(position) {
+            
+            type = 3;
+            data = `${position.coords.latitude}*${position.coords.longitude}`
+            window.location.replace(`details.html?type=3&data=${data}`);
+
+        }
+    });
+
+    
+
+    // Favourite locations
     function favourites() {
         // We check if there is any object already
         if (localStorage.getItem("favourites") === null) {

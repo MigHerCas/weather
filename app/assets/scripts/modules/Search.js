@@ -8,11 +8,13 @@ class Search {
         this.type = type;
         this.data = data;  
         this.btn = $("#searchBtn");
+        this.btnSecondary = $(".search__geolocation");
     }
 
     address() {
         this.btn.attr("href", `details.html?type=${this.type}&data=${this.data}`);
     }
+
 }
 
 export default Search;

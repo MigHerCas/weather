@@ -1,3 +1,13 @@
+
+.section-header {
+
+    & a:link,
+    & a:visited {
+        color: $color-white;
+        text-decoration: none;
+    }
+}
+
 .det {
 
     & .heading, .heading-secondary {

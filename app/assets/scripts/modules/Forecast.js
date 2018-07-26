@@ -26,6 +26,12 @@ class Forecast {
 
         } else if (type == 2) {
             url = `https://api.openweathermap.org/data/2.5/forecast?id=${data}&appid=a4fd59fe380d5916bbb4cb46978e82ad&units=metric`;
+        } else {
+            let coord = data.split("*");
+            let lat = coord[0];
+            let lon = coord[1];
+
+            url = `http://api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${lon}&appid=a4fd59fe380d5916bbb4cb46978e82ad&units=metric`;
         }
 
         // Api call
@@ -50,6 +56,7 @@ class Forecast {
 
         // Variables
         let list = data.list;
+        
         let obj = {};
         let date, day, temp;
 
@@ -90,9 +97,8 @@ class Forecast {
 
         currMax = parseInt(currMax_str.substring(0, 2));
         currMin = parseInt(currMin_str.substring(0, 2));
-
         currentAVGtemp = Math.round((currMax + currMin) / 2);
-           
+        
         for (const prop in obj) {
             target = $(`.info-panel__forecast__item--${index}`);
             target.html(`${Math.round(obj[prop])} ºC` );   
@@ -127,8 +133,8 @@ class Forecast {
         let currentClouds = cloudsObj["clouds"];
 
         let nearTemp = $(".info-panel__forecast__item--1").html();
-        nearTemp = parseInt(nearTemp.substring(0, 2));
-        
+        nearTemp = parseInt(nearTemp.substring(0, 2)); 
+
         let nearHumidity;
         let nearClouds;
 
@@ -142,8 +148,7 @@ class Forecast {
         let obj = {};
         let info = [];
 
-        let temperatureInfo = $(".info-panel__forecast__item--1").html();
-        let cloudsInfo, humidityInfo; 
+        let cloudsInfo, humidityInfo;    
 
         for (const element of list) {
             str = element.dt_txt;
@@ -171,6 +176,7 @@ class Forecast {
                 info = [cloudsInfo, humidityInfo];
                 obj[`${day}`] = info;
             }
+
         }
         
         let index = 0;

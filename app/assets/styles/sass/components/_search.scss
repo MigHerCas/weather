@@ -1,5 +1,11 @@
 .search {
 
+    & a:link, 
+    & a:visited {
+        text-decoration: none;
+        color: $color-default;
+    }   
+
     &__bar {
         overflow: hidden;
         width: 100%;
@@ -18,13 +24,20 @@
             width: calc(100% - 5.2rem);
             height: 1rem;
 
+            @include atSmall {
+                text-indent: .7rem;
+                font-size: 1.1rem;
+            }
+
             @include atMedium {
                 text-indent: 1rem;
+                font-size: 1.2rem;
             }
 
             @include atLarge {
                 width: calc(100% - 5.7rem);
                 height: 1.5rem;
+                font-size: 1.3rem;
                 
             }
             
@@ -124,6 +137,7 @@
         &__radio-wrapper {
             height: 100%;
             position: relative;
+            cursor: default;
         }
     }
 }

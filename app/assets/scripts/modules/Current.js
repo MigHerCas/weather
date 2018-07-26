@@ -24,6 +24,12 @@ class Current {
             url = `http://api.openweathermap.org/data/2.5/weather?q=${data}&appid=a4fd59fe380d5916bbb4cb46978e82ad&units=metric`;
         } else if (type == 2) {
             url = `http://api.openweathermap.org/data/2.5/weather?id=${data}&appid=a4fd59fe380d5916bbb4cb46978e82ad&units=metric`;
+        } else {
+            let coord = data.split("*");
+            let lat = coord[0];
+            let lon = coord[1];
+            
+            url = `http://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=a4fd59fe380d5916bbb4cb46978e82ad&units=metric`;
         }
 
         // Api call
