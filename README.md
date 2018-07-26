@@ -1,5 +1,5 @@
 # Weather app
-### JavaScript assignment by [Onegini](https://www.onegini.com/) company.
+### JavaScript assignment for [Onegini](https://www.onegini.com/) company.
 
 Web app to get the current weather as well as the forecast for the next days.
 
