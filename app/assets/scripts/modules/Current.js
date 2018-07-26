@@ -114,6 +114,22 @@ class Current {
         let min = Math.round(parseInt(data.main.temp_min));
         let humidityP = data.main.humidity;
         let rainP = data.rain;
+        let clouds = data.clouds.all;
+
+        // We save cloulds value in localStorage item
+        // We check if there is any object already
+        let cloudsObject = {"clouds": clouds};
+
+        localStorage.setItem("clouds", JSON.stringify(cloudsObject));
+
+        // Item already exists, we push this favourite
+        cloudsObject = JSON.parse(localStorage.getItem("clouds"));
+
+        // Overwrite cloud value
+        cloudsObject["clouds"] = clouds;
+
+        localStorage.setItem("clouds", JSON.stringify(cloudsObject));
+        cloudsObject = JSON.parse(localStorage.getItem("clouds"));
 
         // In case there is any rain
         if (rainP === undefined) {
@@ -168,7 +184,7 @@ class Current {
 
             } else {
 
-                // Item already exists, we push this favourite
+                // Item already exists, we get it
                 favouritesObject = JSON.parse(localStorage.getItem("favourites"));
 
                 // We check how many entries does it have
