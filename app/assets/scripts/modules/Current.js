@@ -39,7 +39,6 @@ class Current {
             data: {},
             datatype: 'json',
             success: (data) => {
-                console.log(data);
                 this.renderCurrent(data);
             },
             error: (e) => {
@@ -211,7 +210,6 @@ class Current {
             }
             
             favouritesObject = JSON.parse(localStorage.getItem("favourites"));
-            console.log(favouritesObject);
             
             
         } else {

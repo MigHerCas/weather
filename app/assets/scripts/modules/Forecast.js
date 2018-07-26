@@ -41,7 +41,6 @@ class Forecast {
             data: {},
             datatype: 'json',
             success: (data) => {
-                console.log(data);
                 this.getTemperatures(data);
                 this.contrast(data);
             },
