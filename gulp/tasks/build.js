@@ -11,34 +11,39 @@ gulp.task('previewDist', function () {
     browserSync.init({
         notify: false,
         server: {
-            baseDir: "dist"
+            baseDir: "docs"
         }
     });
 
 });
 
 gulp.task('deleteDistFolder', function () {
-    return del("./dist");
+    return del("./docs");
 });
 
-gulp.task('usemin', ['deleteDistFolder', 'sass', 'scripts'], function () {
+gulp.task('useminTrigger', ['deleteDistFolder'], function () {
+    gulp.start("usemin");
+    gulp.start("usemin2");
+});
+
+gulp.task('usemin', ['sass', 'scripts'], function () {
     return gulp.src("./app/index.html")
         .pipe(usemin({
             css: [function () { return rev() },
             function () { return cssnano() }],
             js: [function () { return rev() }, function () { return uglify() }]
         }))
-        .pipe(gulp.dest("./dist"));
+        .pipe(gulp.dest("./docs"));
 });
 
-gulp.task('usemin2', ['deleteDistFolder', 'sass', 'scripts'], function () {
+gulp.task('usemin2', ['sass', 'scripts'], function () {
     return gulp.src("./app/details.html")
         .pipe(usemin({
             css: [function () {return rev()},
                     function () {return cssnano()}],
             js: [function () {return rev()}, function () {return uglify()}]
         }))
-        .pipe(gulp.dest("./dist"));
+        .pipe(gulp.dest("./docs"));
 });
 
 gulp.task('copyGeneralFiles', ['deleteDistFolder'], function() {
@@ -56,5 +61,5 @@ gulp.task('copyGeneralFiles', ['deleteDistFolder'], function() {
         .pipe(gulp.dest("./dist"));
 });
 
-gulp.task('build', ['deleteDistFolder', 'copyGeneralFiles', 'usemin', 'usemin2']);
+gulp.task('build', ['deleteDistFolder', 'copyGeneralFiles', 'useminTrigger']);
 
