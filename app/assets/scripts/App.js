@@ -6,6 +6,7 @@ $(document).ready(function () {
 
     // Classes
     let current = new Current();
+    setTimeout(favourites(), 1000);
 
     // Variables
     let inpName = $("input#name");
@@ -36,7 +37,6 @@ $(document).ready(function () {
         search.address();
     });
 
-
     function favourites() {
         // We check if there is any object already
         if (localStorage.getItem("favourites") === null) {
@@ -44,18 +44,24 @@ $(document).ready(function () {
         } else {
 
             // Item already exists, we get it
-            favouritesObject = JSON.parse(localStorage.getItem("favourites"));
+            let favouritesObject = JSON.parse(localStorage.getItem("favourites"));
 
             // We check how many entries does it have
-            let length = Object.keys(favouritesObject).length;
-            let index;
+            let length = Object.keys(JSON.parse(localStorage.getItem("favourites"))).length;
+            let index = 1;
+
+            for (let i = 1; i <= length; i++) {
+                // We display the items
+                $(`.favourites__item--${i}`).css("display", "grid");
+            }
 
             // We iterate over this object
             for (const item in favouritesObject) {
                 let placeId = favouritesObject[item];
 
                 // Call API through Current.js
-                current.callFavourites(placeId, index);
+                current.setFavourite(placeId, index);
+                index++;
             }
         }
     }

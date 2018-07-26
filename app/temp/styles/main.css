@@ -623,6 +623,12 @@ section:not(.section-search, .section-header) {
   grid-row-gap: 1.2rem;
 }
 
+.favourites a:link,
+.favourites a:visited {
+  text-decoration: none;
+  color: #333;
+}
+
 @media (min-width: 400px) {
   .favourites {
     grid-row-gap: 1.5rem;
@@ -649,7 +655,7 @@ section:not(.section-search, .section-header) {
   height: 100%;
   margin: 0 auto;
   border: 1px solid #2998FF;
-  display: grid;
+  display: none;
   grid-template-columns: 1fr .5fr 1fr;
   grid-template-rows: 1fr 1fr;
   font-size: 1.1rem;

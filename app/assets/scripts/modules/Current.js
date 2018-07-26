@@ -43,7 +43,25 @@ class Current {
 
     }
 
-    callFavourites(placeId, index) {
+    callFavourite(id) {
+        let url = `http://api.openweathermap.org/data/2.5/weather?id=${placeId}&appid=a4fd59fe380d5916bbb4cb46978e82ad&units=metric`;
+
+        // Api call
+        $.ajax({
+            url: url,
+            type: 'GET',
+            data: {},
+            datatype: 'json',
+            success: (data) => {
+                this.renderCurrent(data);
+            },
+            error: (e) => {
+                alert(e);
+            }
+        });
+    }
+
+    setFavourite(placeId, index) {
         let url = `http://api.openweathermap.org/data/2.5/weather?id=${placeId}&appid=a4fd59fe380d5916bbb4cb46978e82ad&units=metric`;
 
         // Api call
@@ -68,15 +86,19 @@ class Current {
         let iconElement = $(`#fav-icon-${index}`);
         let maxElement = $(`#fav-max-${index}`);
         let minElement = $(`#fav-min-${index}`);
+        let anchor = $(`#favourite-anchor-${index}`);
 
         // Info from API
         let name = data.name;
+        let id = data.id;
         let icon = data.weather[0].icon;
         let max = data.main.temp_max;
         let min = data.main.temp_min;
         
         // Rendering HTML
         nameElement.html(name);
+        anchor.attr("href", `details.html?type=2&data=${id}`);
+
         iconElement.attr("src", `http://openweathermap.org/img/w/${icon}.png`);
         maxElement.html(`${max} ºC`);
         minElement.html(`${min} ºC`);
@@ -88,8 +110,8 @@ class Current {
         let name = data.name;
         let id = data.id;
         let icon = data.weather[0].icon;
-        let max = data.main.temp_max;
-        let min = data.main.temp_min;
+        let max = Math.round(parseInt(data.main.temp_max));
+        let min = Math.round(parseInt(data.main.temp_min));
         let humidityP = data.main.humidity;
         let rainP = data.rain;
 
@@ -139,13 +161,10 @@ class Current {
             if (localStorage.getItem("favourites") === null) {
                 
                 // Item does not exist yet, we create it, adding this id
-                favouritesObject = {
-                    
-                };
+                favouritesObject = {1: placeId};
 
                 // We store it
                 localStorage.setItem("favourites", JSON.stringify(favouritesObject));
-                localStorage.getItem("favourites");
 
             } else {
 
@@ -153,7 +172,7 @@ class Current {
                 favouritesObject = JSON.parse(localStorage.getItem("favourites"));
 
                 // We check how many entries does it have
-                let length = Object.keys(favouritesObject).length;
+                let length = Object.keys(JSON.parse(localStorage.getItem("favourites"))).length;
 
                 if (length == 6) {
                     // We dont store more favourites
@@ -166,7 +185,6 @@ class Current {
                     // We store it
                     localStorage.setItem("favourites", JSON.stringify(favouritesObject));
                     localStorage.getItem("favourites");
-
                 }
             }
             
@@ -182,8 +200,8 @@ class Current {
 
     clearStorage() {
         
-        favouritesObject = {};
-        localStorage.setItem("favourites", JSON.stringify(favouritesObject));
+        let clear = {};
+        localStorage.setItem("favourites", JSON.stringify(clear));
         localStorage.getItem("favourites");
     }
 

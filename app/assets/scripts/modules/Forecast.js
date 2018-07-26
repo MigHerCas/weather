@@ -90,6 +90,7 @@ class Forecast {
 
         currMax = parseInt(currMax_str.substring(0, 2));
         currMin = parseInt(currMin_str.substring(0, 2));
+
         currentAVGtemp = Math.round((currMax + currMin) / 2);
            
         for (const prop in obj) {
