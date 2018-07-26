@@ -4,6 +4,7 @@
   "dependencies": {
     "ajax": "0.0.4",
     "jquery": "^3.3.1",
+    "jsonfile": "^4.0.0",
     "path": "^0.12.7"
   },
   "devDependencies": {
@@ -16,10 +17,10 @@
     "gulp-autoprefixer": "^5.0.0",
     "gulp-modernizr": "^3.0.0",
     "gulp-sass": "^4.0.1",
-    "gulp-watch": "^5.0.0",
+    "gulp-watch": "^5.0.1",
     "node-normalize-scss": "^8.0.0",
-    "sass": "^1.10.0",
-    "webpack": "^4.16.1",
+    "sass": "^1.10.1",
+    "webpack": "^4.16.2",
     "webpack-cli": "^3.1.0"
   }
 }

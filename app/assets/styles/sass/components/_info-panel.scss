@@ -46,9 +46,9 @@
         }
 
         &__icon {
-            color: $color-orange;
             position: absolute;
             @include centering;
+            color: $color-grey;
         }    
     }
 

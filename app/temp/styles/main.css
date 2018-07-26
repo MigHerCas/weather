@@ -824,12 +824,12 @@ section:not(.section-search, .section-header) {
 }
 
 .info-panel__details__icon {
-  color: #FFB900;
   position: absolute;
   top: 50%;
   left: 50%;
   -webkit-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%);
+  color: #777777;
 }
 
 .info-panel__daily {

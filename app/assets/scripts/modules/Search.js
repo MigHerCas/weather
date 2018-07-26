@@ -10,7 +10,7 @@ class Search {
         this.btn = $("#searchBtn");
     }
 
-    call() {
+    address() {
         this.btn.attr("href", `details.html?type=${this.type}&data=${this.data}`);
     }
 }
