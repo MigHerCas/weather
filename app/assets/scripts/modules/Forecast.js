@@ -196,54 +196,49 @@ class Forecast {
         }
 
         // With this info:
-        //      Current: currentTemp, currentHumidity, currentClouds
-        //      Near: nearTemp nearHumidity nearClouds
+        // Ideal conditions: 25ºC Temperature, 0 Clouds and 35% Humidity
+        //    
         // We calculate if the weather of next day will be better or worse
 
         // In my opinion, temperature is the most important feature,
-        // then: clouds, temperature in this order
+        // then: clouds and humidity
 
-        let difTemp = currentTemp - nearTemp;
-        let difCloud = currentClouds - nearClouds;
-        let difHum = currentHumidity - nearHumidity;
+        let diftemp = Math.abs(25 - currentTemp) - Math.abs(25 - nearTemp);
+        let difClouds = Math.abs(0 - currentClouds) - Math.abs(0 - nearClouds);
+        let difHumidity = Math.abs(35 - currentHumidity) - Math.abs(35 - nearHumidity);
 
+        // Percentage of improvement or worsen respect the scales:
+        // Temperature scale: from -20ºC to 50ºC -> 70
+        // Cloudiness scale: from 0% to 100% -> 100
+        // Humidity scale: from 0% to 100% -> 100
+
+        let percentTemp = diftemp / 70;
+        let percentClouds = difClouds / 100;
+        let percentHumidity = difHumidity / 100;    
+    
+        // From my point of view, temperature has 50 % of the impact on weather conditions. Both humidity and clouds 25%
+        percentTemp = percentTemp * 1.5;   
+        percentClouds = percentClouds * 1.25;   
+        percentHumidity = percentHumidity * 1.25;  
+        
+        // We group all percentages, and if the final result is greater than 0, the weather will improve. Otherwise it will be worse
+        let generalContrast = percentTemp + percentClouds + percentHumidity;
+        
         let icon = $(".info-panel__subsequent__item-icon");
 
-        if (difTemp > 0) {
-            // Worse
-            icon.addClass("fa-arrow-down");
-            icon.css("color", "#E51118");
-
-        } else if (difTemp == 0) {
-
-            if (difCloud > 0) {
-                // Better
-                icon.addClass("fa-arrow-up");
-                icon.css("color", "#7ED56F");
-            } else if (difCloud < 0) {
-                // Worse
-                icon.addClass("fa-arrow-down");
-                icon.css("color", "#E51118");
-            } else {
-                if (difHum > 0) {
-                    // Better
-                    icon.addClass("fa-arrow-up");
-                    icon.css("color", "#7ED56F");
-                } else if (difHum < 0) {
-                    // Worse
-                    icon.addClass("fa-arrow-down");
-                    icon.css("color", "#E51118");
-                } else {
-                    // Equal
-                    icon.addClass("fa-equals");
-                    icon.css("color", "#777777");
-                }
-            }
-        } else {
+        if (generalContrast > 1) {
             // Better
             icon.addClass("fa-arrow-up");
             icon.css("color", "#7ED56F");
-        }
+        } else if (generalContrast < 1) {
+            // Worse
+            icon.addClass("fa-arrow-down");
+            icon.css("color", "#E51118");
+        } else {
+            // Equal
+            icon.addClass("fa-equals");
+            icon.css("color", "#777777");
+        } 
         
     }
             
