@@ -221,7 +221,7 @@ class Forecast {
         percentClouds = percentClouds * 1.25;   
         percentHumidity = percentHumidity * 1.25;  
         
-        // We group all percentages, and if the final result is greater than 0, the weather will improve. Otherwise it will be worse
+        // We group all percentages, and if the final result is greater than 1, the weather will improve. Otherwise it will be worse
         let generalContrast = percentTemp + percentClouds + percentHumidity;
         
         let icon = $(".info-panel__subsequent__item-icon");
