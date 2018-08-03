@@ -26,7 +26,7 @@ Web app to get the current weather as well as the forecast for the next days.
 
 ### Annotation: 
 I uploaded the app to the [github page](https://mighercas.github.io/weather/), but API call does not work due to HTTPS protocol.
-To test this app, please clone or download this repository.
+To test this app, please clone or download this repository using the Docs folder.
 
 ### Screenshots
 ![captura1](https://user-images.githubusercontent.com/29380502/43291233-febbb5fc-9130-11e8-9486-7d52e02feeaf.PNG)
