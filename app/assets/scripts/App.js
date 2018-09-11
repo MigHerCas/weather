@@ -18,21 +18,20 @@ $(document).ready(function () {
     let search;
 
     // Radio events
-    inpName.click(function () {
-        
+    inpName.click(() => {     
         type = 1;
         search = new Search(data, type);
         search.address();
     });
 
-    inpId.click(function () {
+    inpId.click(() => {
         type = 2;
         search = new Search(data, type);
         search.address();
     });
 
     // Input text event
-    inpSearch.on('input', function (e) {
+    inpSearch.on('input', (e) => {
         data = inpSearch.val().toLowerCase();   
         search = new Search(data, type);
         search.address();
@@ -40,7 +39,8 @@ $(document).ready(function () {
 
     // Geolocation
     inpCurrent.change(() => {
-       
+        
+        // If geolocation is supported by our browser / device
         if (navigator.geolocation) {
             
             navigator.geolocation.getCurrentPosition(callGeoLoc);

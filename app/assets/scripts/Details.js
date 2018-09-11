@@ -15,7 +15,7 @@ $( document ).ready(() => {
         favIcon.css("color", "#FFB900");
     });
 
-    favIcon.click(function () {
+    favIcon.click(() => {
         let clicks = $(this).data('clicks');
 
             if (clicks) {
@@ -48,10 +48,5 @@ $( document ).ready(() => {
     function checkFavourite () {
         // Check if this location is already stored in the favourite list
         let placeId = $(".cityName").html();
-
-        
     }
-
-    
-    
 });
